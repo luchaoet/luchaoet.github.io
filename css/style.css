@@ -261,7 +261,8 @@ a:hover, a:active {
 .post .post-title a {
   text-decoration: none;
   letter-spacing: 1px;
-  color: #5f5f5f;
+  color: #0366d6;
+  font-size: 20px;
 }
 .post .post-title a:hover {
   text-decoration: underline;
