@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="John Doe"><title>git命令 · 长剑腥腥挂壁</title><meta name="description" content="创建并切换到该分支git checkout -b dev
+切换分支git checkout dev
+查看分支git branch  /*本地分支*/git branch -a /*本地和远程分支*/
+合并dev分支git merge dev
+删除分支git branch -d dev /*删除本地分"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/logo-2.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo-2.png" style="width:127px;"><h3 title=""><a href="/">长剑腥腥挂壁</a></h3></div></div><ul class="social-links"></ul></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/logo-2.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>git命令</a></h3></div><div class="post-content"><h3 id="创建并切换到该分支"><a href="#创建并切换到该分支" class="headerlink" title="创建并切换到该分支"></a>创建并切换到该分支</h3><p>git checkout -b dev</p>
+<h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><p>git checkout dev</p>
+<h3 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h3><p>git branch  /*本地分支*/<br>git branch -a /*本地和远程分支*/</p>
+<h3 id="合并dev分支"><a href="#合并dev分支" class="headerlink" title="合并dev分支"></a>合并dev分支</h3><p>git merge dev</p>
+<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><p>git branch -d dev /*删除本地分支*/<br>git branch -D dev /*强行删除没有合并过的分支*/<br>git push branch -d dev /*删除远程分支*/</p>
+<h3 id="重新命名本地分支"><a href="#重新命名本地分支" class="headerlink" title="重新命名本地分支"></a>重新命名本地分支</h3><p>git branch -m dev1 dev2 /*本地将dev1分支命名为dev2，推送远程后，dev1 dev2同时存在*/</p>
+<h3 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h3><div class="bi-table"><br>  <table><br>    <colgroup><br>      <col width="126px"><br>      <col width="auto"><br>      <col width="auto"><br>      <col width="181px"><br>    </colgroup><br>    <tbody><br>      <tr height="34px"><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">命令</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">修改的文件</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">新文件</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="p">删除的文件</div><br>        </td><br>      </tr><br>      <tr height="34px"><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">git add .</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✔</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✔</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✘</div><br>          </div><br>        </td><br>      </tr><br>      <tr height="34px"><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">git add -u</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✔</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✘</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✔</div><br>          </div><br>        </td><br>      </tr><br>      <tr height="34px"><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">git add -A</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✔</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✔</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✔</div><br>          </div><br>        </td><br>      </tr><br>    </tbody><br>  </table><br></div>
+
+<h3 id="回到历史某版本"><a href="#回到历史某版本" class="headerlink" title="回到历史某版本"></a>回到历史某版本</h3><p>git reset –hard d97e<br>git reset –hard HEAD^ /*回到上一个版本*/</p>
+<h3 id="打开提交记录后台"><a href="#打开提交记录后台" class="headerlink" title="打开提交记录后台"></a>打开提交记录后台</h3><p>gitk /*mac上没有该命令*/</p>
+<h3 id="bug分支处理"><a href="#bug分支处理" class="headerlink" title="bug分支处理"></a>bug分支处理</h3><p>场景：正在dev上开发，需要去其他分支处理紧急问题<br>1.在dev上储存为提交的代码<br>git stash save “说明”<br>2.切换到其他分支去处理问题<br>3.且回到dev 查看存储的工作现场<br>git stash list<br>4.恢复<br>git stash pop /*恢复 同时删除stash内容*/</p>
+<table>
+<thead>
+<tr>
+<th>git stash apply stash@{0}</th>
+<th>恢复时不删除stash内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>git stash drop</td>
+<td>删除最近一个</td>
+</tr>
+<tr>
+<td>git stash clear</td>
+<td>删除所有的</td>
+</tr>
+<tr>
+<td>git stash drop stash@{0}</td>
+<td>删除特定某一个</td>
+</tr>
+</tbody>
+</table>
+<h3 id="各个分支作用"><a href="#各个分支作用" class="headerlink" title="各个分支作用"></a>各个分支作用</h3><table>
+<thead>
+<tr>
+<th>master</th>
+<th>主分支</th>
+<th>时刻与远程同步</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dev</td>
+<td>开发分支</td>
+<td>团队开发的代码都要合并到该分支 时刻与远程同步</td>
+</tr>
+<tr>
+<td>bug</td>
+<td>bug修复分支</td>
+<td>bug修复完毕 合并到dev 没必要推送到远程</td>
+</tr>
+</tbody>
+</table>
+<h3 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h3><p>git tag /*查看所有的标签*/<br>git tag v1.0 /*打标签*/<br>git tag v1.0 c80cc /*给某历史版本打标签*/<br>git show v1.0 /*查看v1.0标签信息*/<br>git tag -d v1.0 /*删除v1.0标签*/<br>git push origin v1.0 /*推送标签到远程*/<br>git push origin :refs/tags/v1.0 /*删除远程tag标签*/</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2018-03-06</span><i class="fa fa-tag"></i><a class="tag" href="/tags/git/" title="git">git </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2017/12/05/git提交日志规范/" title="git提交日志规范">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
