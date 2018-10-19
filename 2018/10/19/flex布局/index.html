@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Lucy"><title>flex布局 · 长剑腥腥挂壁</title><meta name="description" content="Flexible Box 弹性布局display: flex／inline-flex;
+注意，设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。
+
+1.容器的属性
+flex-direction
+flex-wrap
+flex-flow
+justify-c"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/logo-2.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo-2.png" style="width:127px;"><h3 title=""><a href="/">长剑腥腥挂壁</a></h3></div></div><ul class="social-links"></ul></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/logo-2.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>flex布局</a></h3></div><div class="post-content"><p>Flexible Box 弹性布局<br><span data-type="color" style="color:#F5222D"><strong>display: flex／inline-flex;</strong></span></p>
+<p>注意，设为 Flex 布局以后，子元素的<span data-type="background" style="background-color:#FFFB8F">float</span>、<span data-type="background" style="background-color:#FFFB8F">clear</span>和<span data-type="background" style="background-color:#FFFB8F">vertical-align</span>属性将失效。</p>
+<hr>
+<h2 id="1-容器的属性"><a href="#1-容器的属性" class="headerlink" title="1.容器的属性"></a>1.容器的属性</h2><ul>
+<li>flex-direction</li>
+<li>flex-wrap</li>
+<li>flex-flow</li>
+<li>justify-content</li>
+<li>align-items</li>
+<li>align-content</li>
+</ul>
+<h3 id="1-1-flex-direction-row-row-reverse-column-column-reverse-主轴的方向，即项目的排列方向"><a href="#1-1-flex-direction-row-row-reverse-column-column-reverse-主轴的方向，即项目的排列方向" class="headerlink" title="1.1 flex-direction: row | row-reverse | column | column-reverse; 主轴的方向，即项目的排列方向"></a>1.1 flex-direction: <span data-type="background" style="background-color:#FFFB8F">row</span> | <span data-type="background" style="background-color:#FFFB8F">row-reverse</span> | <span data-type="background" style="background-color:#FFFB8F">column</span> | <span data-type="background" style="background-color:#FFFB8F">column-reverse</span>; 主轴的方向，即项目的排列方向</h3><table>
+<thead>
+<tr>
+<th>row(默认) 主轴为水平方向，起点在左端</th>
+<th><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536820139098-749c149e-8503-4772-9043-ac0c3cae2932.png"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>row-reverse 主轴为水平方向，起点在右端</td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536820304582-66c87a00-b7b1-46e9-bca4-6f9cb72b4bd4.png"></td>
+</tr>
+<tr>
+<td>coumn 主轴为垂直方向，起点在上沿</td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536820375125-674aa130-f8c5-469a-bb0c-6198ed5a1ebc.png"></td>
+</tr>
+<tr>
+<td>column-reverse 主轴为垂直方向，起点在下沿</td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536820410702-2c91e9bb-f8a5-4688-af66-8b0c7dae01da.png"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-2-flex-wrap-nowrap-wrap-wrap-reverse-换行"><a href="#1-2-flex-wrap-nowrap-wrap-wrap-reverse-换行" class="headerlink" title="1.2 flex-wrap: nowrap | wrap | wrap-reverse; 换行"></a>1.2 flex-wrap: <span data-type="background" style="background-color:#FFFB8F">nowrap</span> | <span data-type="background" style="background-color:#FFFB8F">wrap</span> | <span data-type="background" style="background-color:#FFFB8F">wrap-reverse</span>; 换行</h3><table>
+<thead>
+<tr>
+<th>nowrap(默认) 不换行</th>
+<th><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536820919453-eaa96d42-e988-4932-ac3d-d0ea807d726e.png"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wrap 换行 第一行在上方</td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536821160803-4167dffe-0a14-447a-9103-e147a9011546.png"></td>
+</tr>
+<tr>
+<td>wrap-reverse 换行 第一行在下方</td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536821128497-30ed6de2-43b6-4196-b02b-1affd545364c.png"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-3-flex-flow"><a href="#1-3-flex-flow" class="headerlink" title="1.3 flex-flow"></a>1.3 flex-flow</h3><p>flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap<br>flex-flow: <flex-direction> || <flex-wrap>;</flex-wrap></flex-direction></p>
+<h3 id="1-4-justify-content-flex-start-flex-end-center-space-between-space-around"><a href="#1-4-justify-content-flex-start-flex-end-center-space-between-space-around" class="headerlink" title="1.4 justify-content: flex-start | flex-end | center | space-between | space-around;"></a>1.4 justify-content: <span data-type="background" style="background-color:#FFFB8F">flex-start</span> | <span data-type="background" style="background-color:#FFFB8F">flex-end</span> | <span data-type="background" style="background-color:#FFFB8F">center</span> | <span data-type="background" style="background-color:#FFFB8F">space-between</span> | <span data-type="background" style="background-color:#FFFB8F">space-around</span>;</h3><table>
+<thead>
+<tr>
+<th>flex-start</th>
+<th>默认值 左对齐</th>
+<th><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536822576088-293bcbcb-ebc7-4b8f-ac2c-15311769f4f1.png"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flex-end</td>
+<td>右对齐</td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536822501567-b0c69e00-85ef-4ea8-82e2-9d715d5a2098.png"></td>
+</tr>
+<tr>
+<td>center</td>
+<td>居中</td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536822609702-043a708a-2220-4e65-ad01-1afed0c8c0b9.png"></td>
+</tr>
+<tr>
+<td>space-between</td>
+<td>两端对齐，项目之间的间隔都相等</td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536822645773-41136a16-69fb-4ee1-abe0-d3fa8d8486fa.png"></td>
+</tr>
+<tr>
+<td>space-around</td>
+<td>每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍</td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536822679830-1fe3e151-0863-4175-9a82-4e1ef4b7e81a.png"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-5-align-items-flex-start-flex-end-center-baseline-stretch"><a href="#1-5-align-items-flex-start-flex-end-center-baseline-stretch" class="headerlink" title="1.5 align-items: flex-start | flex-end | center | baseline | stretch;"></a>1.5 align-items: <span data-type="background" style="background-color:#FFFB8F">flex-start</span> | <span data-type="background" style="background-color:#FFFB8F">flex-end</span> | <span data-type="background" style="background-color:#FFFB8F">center</span> | <span data-type="background" style="background-color:#FFFB8F">baseline</span> | <span data-type="background" style="background-color:#FFFB8F">stretch</span>;</h3><table>
+<thead>
+<tr>
+<th>flex-start</th>
+<th><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536823353807-0dcfaa51-3509-42c4-93df-3584dfcb3311.png"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flex-end</td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536823391774-a58849a7-fe1b-4a26-9784-9d6d4b913af6.png"></td>
+</tr>
+<tr>
+<td>center</td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536823413352-12f034ed-ed0c-4b34-9cf2-ae47660ee1b6.png"></td>
+</tr>
+<tr>
+<td>baseline</td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536823546804-e752afe1-518e-4760-a497-a730d3af9e31.png"></td>
+</tr>
+<tr>
+<td>stretch</td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536823629323-845ef374-2c90-417f-93ae-5f39a6220441.png"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-6-align-content-flex-start-flex-end-center-space-between-space-around-stretch-容器下所有项目的堆叠方式"><a href="#1-6-align-content-flex-start-flex-end-center-space-between-space-around-stretch-容器下所有项目的堆叠方式" class="headerlink" title="1.6 align-content: flex-start | flex-end | center | space-between | space-around | stretch; 容器下所有项目的堆叠方式"></a>1.6 align-content: <span data-type="background" style="background-color:#FFFB8F">flex-start </span>| <span data-type="background" style="background-color:#FFFB8F">flex-end</span> | <span data-type="background" style="background-color:#FFFB8F">center</span> | <span data-type="background" style="background-color:#FFFB8F">space-between</span> | <span data-type="background" style="background-color:#FFFB8F">space-around</span> | <span data-type="background" style="background-color:#FFFB8F">stretch</span>; 容器下所有项目的堆叠方式</h3><table>
+<thead>
+<tr>
+<th>flex-start</th>
+<th>从上到下堆叠</th>
+<th><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536824290734-c5bb2cbd-1476-4f6d-9db9-454090f54147.png"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flex-end</td>
+<td>从下到上堆叠</td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536824504217-65a13958-ab3e-4059-88dd-59bff9e8718c.png"></td>
+</tr>
+<tr>
+<td>center</td>
+<td>堆叠在中间</td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536824584914-ada15f66-b973-482f-9d81-94a220b8ed1f.png"></td>
+</tr>
+<tr>
+<td>space-between</td>
+<td></td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536824817313-533c7637-9b12-48ff-8405-acd15e949970.png"></td>
+</tr>
+<tr>
+<td>space-around</td>
+<td></td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536824864230-c1289f7c-9fcd-4c34-add7-d855d4edd603.png"></td>
+</tr>
+<tr>
+<td>stretch</td>
+<td></td>
+<td><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536824925218-8bc522f9-5ebc-4f5a-897c-aee1a551d143.png"></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="2-项目的属性"><a href="#2-项目的属性" class="headerlink" title="2.项目的属性"></a>2.项目的属性</h2><ul>
+<li>order</li>
+<li>flex-grow</li>
+<li>flex-shrink</li>
+<li>flex-basis</li>
+<li>flex</li>
+<li>align-self<h3 id="2-1-order"><a href="#2-1-order" class="headerlink" title="2.1 order"></a>2.1 order</h3>项目的排列顺序。数值越小，排列越靠前，默认为0<h3 id="2-2-flex-grow"><a href="#2-2-flex-grow" class="headerlink" title="2.2 flex-grow"></a>2.2 flex-grow</h3>项目的占据比例</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536825508342-f317f43c-d6ae-4dfa-8a20-66be455b1f3a.png" alt="image.png | left | 400x59.130434782608695"></p>
+<h3 id="2-3-flex-shrink"><a href="#2-3-flex-shrink" class="headerlink" title="2.3 flex-shrink"></a>2.3 flex-shrink</h3><h3 id="2-4-flex-basis"><a href="#2-4-flex-basis" class="headerlink" title="2.4 flex-basis"></a>2.4 flex-basis</h3><p>项目的占据宽度 flex-basis:300px;</p>
+<h3 id="2-5-flex"><a href="#2-5-flex" class="headerlink" title="2.5 flex"></a>2.5 flex</h3><p>flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</p>
+<h3 id="2-6-align-self"><a href="#2-6-align-self" class="headerlink" title="2.6 align-self"></a>2.6 align-self</h3><p>align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1536826020004-f01a09f4-1b58-4194-aa1c-3acf9fee1ee9.png" alt="image.png | left | 400x137.69063180827888"></p>
+<p>该属性可能取6个值，除了auto，其他都与align-items属性完全一致</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2018-10-19</span><i class="fa fa-tag"></i><a class="tag" href="/tags/flex/" title="flex">flex </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2018/10/18/css3新属性/" title="css3新属性">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
