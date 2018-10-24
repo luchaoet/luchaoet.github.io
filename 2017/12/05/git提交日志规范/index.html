@@ -10,9 +10,9 @@
 <p>对 Git 提交日志进行格式约束是否带来较高的执行成本？</p>
 <ol>
 <li>所谓仓廪实而知礼节，随着大型共建项目 / 开源项目的增多，必然要用更专业化的态度去面对。规范化的 Git log 正是其中一环。</li>
-<li>最后，如果实在无法完美遵循日志规范，最最重要的原则是：<strong>至少要保证在整个项目中 log 格式的一致性</strong>！不要做一个朝秦暮楚的人。</li>
+<li>最后，如果实在无法完美遵循日志规范，最最重要的原则是：<strong>至少要保证在整个项目中 log 格式的一致性</strong>！不要做一个朝秦暮楚的人。<h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3></li>
 </ol>
-<h3 id="type"><a href="#type" class="headerlink" title="type"></a>type</h3><p>提交类型 type 用来描述一次提交行为的改动方向。</p>
+<p>提交类型 type 用来描述一次提交行为的改动方向。</p>
 <p>type 的可选值如下。注意：Git log 的 type 和 changelog 的 type 存在紧密联系；然而它们两者之间并非一一对应，比如在 changelog 中一般不会指出文档 docs 或测试用例 test 等方面发生的变化。</p>
 <ul>
 <li>feat: 新增功能。</li>
@@ -45,4 +45,9 @@
 <li>注明修复的问题。使用 <code>Closes</code> 关键字，后面跟上（Gitlab / Redmine 或其他平台的）issue ID。  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Closes #120</span><br><span class="line">    </span><br><span class="line">Closes #35, #38, #49</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2017-12-05</span><i class="fa fa-tag"></i><a class="tag" href="/tags/git/" title="git">git </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2018/03/06/git命令/" title="git命令">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2017/09/03/hexo搭建个人博客/" title="hexo搭建个人博客">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
+<h2 id="Commitizen"><a href="#Commitizen" class="headerlink" title="Commitizen"></a>Commitizen</h2><p><a href="https://github.com/commitizen/cz-cli" target="_blank" rel="noopener">Commitizen</a><span data-type="color" style="color:rgb(51, 51, 51)"><span data-type="background" style="background-color:rgb(255, 255, 255)">是一个撰写合格 Commit message 的工具</span></span></p>
+<p>安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g commitizen</span><br></pre></td></tr></table></figure></p>
+<p><span data-type="color" style="color:rgb(51, 51, 51)"><span data-type="background" style="background-color:rgb(255, 255, 255)">然后，在项目目录里，运行下面的命令，使其支持 Angular 的 Commit message 格式</span></span><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">commitizen init cz-conventional-changelog --save --save-exact</span><br></pre></td></tr></table></figure></p>
+<p><span data-type="color" style="color:rgb(51, 51, 51)"><span data-type="background" style="background-color:rgb(255, 255, 255)">以后，凡是用到</span></span><code>git commit</code><span data-type="color" style="color:rgb(51, 51, 51)"><span data-type="background" style="background-color:rgb(255, 255, 255)">命令，一律改为使用</span></span><code>git cz</code><span data-type="color" style="color:rgb(51, 51, 51)"><span data-type="background" style="background-color:rgb(255, 255, 255)">。这时，就会出现选项，用来生成符合格式的 Commit message</span></span></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2018/png/115449/1540362574576-35ec7d1a-cfe3-40e0-9df2-7e5d5f244f69.png" alt="粘贴图片.png | center | 650x461"></p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2017-12-05</span><i class="fa fa-tag"></i><a class="tag" href="/tags/git/" title="git">git </a><a class="tag" href="/tags/Commitizen/" title="Commitizen">Commitizen </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2018/03/06/git命令/" title="git命令">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2017/09/03/hexo搭建个人博客/" title="hexo搭建个人博客">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
