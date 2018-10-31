@@ -4,7 +4,7 @@ web UI中DOM节点跨层级的移动"><meta name="keywords"><meta content="width
 <ol>
 <li>web UI中DOM节点跨层级的移动操作特别少 可以忽略不计</li>
 <li>拥有相同类的两个组件将会生成相似的树形结构 拥有不同类的组件将会生成不同的树形结构</li>
-<li>同一层级的一组子节点 它们会通过唯一的id进行区别<br><span data-type="color" style="color:rgb(36, 41, 46)"><span data-type="background" style="background-color:rgb(255, 255, 255)">基于以上策略 React分别对tree diff，component diff,element diff进行算法优化，事实证明这3个前提策略是合理且准确的，它保证了整个界面构建的性能</span></span></li>
+<li>同一层级的一组子节点 它们会通过唯一的id进行区别<br><span data-type="color" style="background:rgba(0, 0, 0, 0.5)"><span data-type="background" style="background-color:rgb(255, 255, 255)">基于以上策略 React分别对tree diff，component diff,element diff进行算法优化，事实证明这3个前提策略是合理且准确的，它保证了整个界面构建的性能</span></span></li>
 </ol>
 <h1 id="1-tree-diff"><a href="#1-tree-diff" class="headerlink" title="1. tree diff"></a>1. tree diff</h1><p>React对树的算法进行了简洁明了的优化，即对树进行分层比较，两棵树只会对同一层次的节点进行比较<br>特点：</p>
 <ul>
