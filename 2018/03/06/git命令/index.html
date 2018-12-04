@@ -8,8 +8,36 @@
 <h3 id="合并dev分支"><a href="#合并dev分支" class="headerlink" title="合并dev分支"></a>合并dev分支</h3><p>git merge dev</p>
 <h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><p>git branch -d dev /*删除本地分支*/<br>git branch -D dev /*强行删除没有合并过的分支*/<br>git push branch -d dev /*删除远程分支*/</p>
 <h3 id="重新命名本地分支"><a href="#重新命名本地分支" class="headerlink" title="重新命名本地分支"></a>重新命名本地分支</h3><p>git branch -m dev1 dev2 /*本地将dev1分支命名为dev2，推送远程后，dev1 dev2同时存在*/</p>
-<h3 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h3><div class="bi-table"><br>  <table><br>    <colgroup><br>      <col width="126px"><br>      <col width="auto"><br>      <col width="auto"><br>      <col width="181px"><br>    </colgroup><br>    <tbody><br>      <tr height="34px"><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">命令</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">修改的文件</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">新文件</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="p">删除的文件</div><br>        </td><br>      </tr><br>      <tr height="34px"><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">git add .</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✔</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✔</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✘</div><br>          </div><br>        </td><br>      </tr><br>      <tr height="34px"><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">git add -u</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✔</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✘</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✔</div><br>          </div><br>        </td><br>      </tr><br>      <tr height="34px"><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">git add -A</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✔</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✔</div><br>          </div><br>        </td><br>        <td rowspan="1" colspan="1"><br>          <div data-type="alignment" data-value="center" style="text-align:center"><br>            <div data-type="p">✔</div><br>          </div><br>        </td><br>      </tr><br>    </tbody><br>  </table><br></div>
-
+<h3 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>修改的文件</th>
+<th>新文件</th>
+<th>删除的文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>git add .</td>
+<td>✔</td>
+<td>✔</td>
+<td>✘</td>
+</tr>
+<tr>
+<td>git add -u</td>
+<td>✔</td>
+<td>✘</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>git add -A</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+</tbody>
+</table>
 <h3 id="回到历史某版本"><a href="#回到历史某版本" class="headerlink" title="回到历史某版本"></a>回到历史某版本</h3><p>git reset –hard d97e<br>git reset –hard HEAD^ /*回到上一个版本*/</p>
 <h3 id="打开提交记录后台"><a href="#打开提交记录后台" class="headerlink" title="打开提交记录后台"></a>打开提交记录后台</h3><p>gitk /*mac上没有该命令*/</p>
 <h3 id="bug分支处理"><a href="#bug分支处理" class="headerlink" title="bug分支处理"></a>bug分支处理</h3><p>场景：正在dev上开发，需要去其他分支处理紧急问题<br>1.在dev上储存为提交的代码<br>git stash save “说明”<br>2.切换到其他分支去处理问题<br>3.且回到dev 查看存储的工作现场<br>git stash list<br>4.恢复<br>git stash pop /*恢复 同时删除stash内容*/</p>
