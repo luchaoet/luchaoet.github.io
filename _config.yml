@@ -87,3 +87,9 @@ archive_generator:
   yearly: false
   monthly: false
   daily: false
+
+# Disqus 添加在这里
+disqus:
+  enable: true
+  shortname: luhchao
+  count: true

@@ -12,6 +12,7 @@ install:
   - npm install # 下载依赖
 
 script:
+  - hexo c
   - hexo g
 
 after_script: # 推送到github的部分
