@@ -1,0 +1,36 @@
+language: node_js # 声明环境为node
+node_js: 
+  - "8"
+
+# Travis-CI Caching
+cache:
+  directories:
+    - node_modules # 缓存node_modules文件夹
+
+# S: Build Lifecycle
+install:
+  - npm install # 下载依赖
+
+script:
+  - hexo g
+
+after_script: # 推送到github的部分
+  - cd ./public
+  - git init
+  - git config user.name "Lucy20209060"
+  - git config user.email "550502661@qq.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${GIT_REPO_TOKEN}@${GH_REF}" master:master # 通过之前存在Travis-CI里的token以及github仓库的地址推送到相应的master分支
+# E: Build LifeCycle
+
+branches:
+  only:
+    - dev # 只对dev分支构建
+
+env: # 环境变量
+ global:
+   - GH_REF: github.com/Lucy20209060/Lucy20209060.github.io # 我的仓库地址
+
+
+   
