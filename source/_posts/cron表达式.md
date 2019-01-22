@@ -1,0 +1,76 @@
+---
+title: cron表达式
+date: 2018-03-12 21:35:25
+tags: cron
+summary: 最近项目中涉及使用到cron表达式，总结一下
+---
+
+### 1. 组成
+cron表达式实际上是由七个子表达式组成。这些表达式之间用空格分隔。
+
+1. Seconds （秒）0~59
+2. Minutes（分）0~59
+3. Hours（小时）0～23
+4. Day  （天）1～31
+5. Month（月）1~12，或者&quot;JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV,DEC&quot;
+6. Week （周） 1~7,1=SUN 或者&quot;SUN, MON, TUE, WED, THU, FRI, SAT”
+7. Year（年） 1970~2099
+
+### 2. 值
+
+<span data-type="color" style="color:rgb(0, 0, 0)">Cron表达式的格式：秒 分 时 日 月 周 年(可选)</span>
+
+| 字段名  | 允许值 | 允许的特殊字符 |
+| :---------: | :--------------: | :-------------------: |
+| 秒        | 0～59           | , - * ／              |
+| 分        | 0～59           | , - * ／              |
+| 时        | 0～23           | , - * ／              |
+| 日        | 1～31           | , - * ?／L W C        |
+| 月        | 1～12／JAN-DEC  | , - * ／              |
+| 周        | 1-7／SUN-SAT    | , - * ? / L C #      |
+| 年        | 1970~2099／空   | , - * /              |
+
+### 3.字符含义
+
+| 字符  | 含义 | 举例 |
+| :---------: | :---------: | :--------- |
+| ,        | 枚举值 | 在Minutes子表达式中，“5,20”表示在5分钟和20分钟触发 |
+| -        | 指定范围 |  |
+| *        | 代表所有可能的值 | 在Month中表示每个月，在Day中表示每天，在Hours表示每小时 |
+| /        | 指定增量 | 在Minutes子表达式中，“0/15”表示从0分钟开始，每15分钟执行一次。"3/20"表示从第三分钟开始，每20分钟执行一次。和"3,23,43"（表示第3，23，43分钟触发）的含义一样 |
+| ?        | 用在Day和Week中，指“没有具体的值”。当两个子表达式其中一个被指定了值以后，为了避免冲突，需要将另外一个的值设为“?” | 每月20日触发调度，不管20号是星期几，只能用如下写法：0 0 0 20 * ?，其中最后以为只能用“?”，而不能用“*” |
+| L        | 用在Day和Week中，表示last | 月的最后一天／周的最后一天 |
+| W        | “Weekday”的缩写。只能用在day-of-month字段。用来描叙最接近指定天的工作日（周一到周五）| 在Day字段用“15W”指“最接近这个月第15天的某个工作日”，即如果这个月第15天是周六，那么触发器将会在这个月第14天即周五触发；如果这个月第15天是周日，那么触发器将会在这个月第 16天即周一触发；如果这个月第15天是周二，那么就在触发器这天触发。注意一点：这个用法只会在当前月计算值，不会越过当前月。“W”字符仅能在Day指明一天，不能是一个范围或列表。也可以用“LW”来指定这个月的最后一个工作日，即最后一个星期五。 |
+| #        | 只能用在Week字段。用来指定这个月的第几个周几 | 在Week字段用"6#3" or "FRI#3"指这个月第3个周五（6指周五，3指第3个）。如果指定的日期不存在，触发器就不会触发 |
+
+### 4.表达式例子
+
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 * * * * ?` 每1分钟触发一次</span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 0 * * * ?` 每1小时触发一次</span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 0 10 * * ?` 每天10点触发一次</span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 * 14 * * ?` 在每天下午2点到下午2:59期间的每1分钟触发</span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 30 9 1 * ?` 每月1号上午9点半</span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 15 10 15 * ?` 每月15日上午10:15触发</span>
+
+<span data-type="color" style="color:rgb(0, 0, 0)">`*/5 * * * * ?` 每隔5秒执行一次</span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 */1 * * * ?` 每隔1分钟执行一次</span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 0 5-15 * * ?` 每天5-15点整点触发</span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 0/3 * * * ?` 每三分钟触发一次</span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 0-5 14 * * ?` 在每天下午2点到下午2:05期间的每1分钟触发 </span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 0/5 14 * * ?` 在每天下午2点到下午2:55期间的每5分钟触发</span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 0/5 14,18 * * ?` 在每天下午2点到2:55期间和下午6点到6:55期间的每5分钟触发</span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 0/30 9-17 * * ?` 朝九晚五工作时间内每半小时</span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 0 10,14,16 * * ?` 每天上午10点，下午2点，4点 </span>
+
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 0 12 ? * WED` 表示每个星期三中午12点</span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 0 17 ? * TUES,THUR,SAT` 每周二、四、六下午五点</span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 10,44 14 ? 3 WED` 每年三月的星期三的下午2:10和2:44触发 </span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 15 10 ? * MON-FRI` 周一至周五的上午10:15触发</span>
+
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 0 23 L * ?` 每月最后一天23点执行一次</span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 15 10 L * ?` 每月最后一日的上午10:15触发 </span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 15 10 ? * 6L` 每月的最后一个星期五上午10:15触发 </span>
+
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 15 10 * * ? 2005` 2005年的每天上午10:15触发 </span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 15 10 ? * 6L 2002-2005` 2002年至2005年的每月的最后一个星期五上午10:15触发 </span>
+<span data-type="color" style="color:rgb(0, 0, 0)">`0 15 10 ? * 6#3` 每月的第三个星期五上午10:15触发</span>
