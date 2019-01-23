@@ -89,7 +89,4 @@ archive_generator:
   daily: false
 
 # Disqus 添加在这里
-disqus:
-  enable: true
-  shortname: luhchao
-  count: true
+disqus_shortname: luchao
