@@ -1,5 +1,5 @@
 ---
-title: Python内置函数
+title: Python—内置函数
 date: 2019-01-27 23:14:04
 tags: ['Python', '内置函数']
 summary:
@@ -93,7 +93,6 @@ dict([('id', 'name'),(1, 'lucy')]) # {'id':1, 'name': 'lucy'}
 
 ### dir()
 不带参数时返回当前范围内的变量，方法和定义的类型列表<br />带参数时返回参数的属性，方法列表
-
 ```
 dir()
 # __main__.Animal
@@ -111,15 +110,51 @@ divmod(7,3)
 ```
 
 ### enumerate()
+返回一个迭代器<br />next()方法返回一个元组，包括下标及对应的元素
+```python
+g = enumerate(['a', 'b', 'c', 'd'])
+print g.next() # (0, 'a')
+```
+
 ### eval()
+将字符串当成有效的表达式来求值并返回计算结果
+```python
+r = '1 + 4'
+print eval(r) # 5
+```
+
 ### exec()
 ### filter()
 ### float()
+将一个字符串或整数转化为浮点数
+```python
+print float(100) # 100.0
+print float('100') # 100.0
+print float('a') # 报错 不能转化
+```
+
 ### format()
+格式化输出字符串
+```python
+s = 'My name is {0}, I am from {1}!'.format('Lucy', 'China')
+print s 
+# My name is Lucy, I am from China!
+```
+
 ### frozenset()
 ### getattr()
+获取对象的属性
+
 ### globals()
+返回一个包含所有全局变量的字典
+
 ### hasattr()
+判断某个对象是否包含某个特性
+```python
+hasattr(list, 'append')
+# True
+```
+
 ### hash()
 ### help()
 ### hex()
@@ -159,3 +194,6 @@ divmod(7,3)
 ### vars()
 ### zip()
 ### __import__()
+
+### 
+
