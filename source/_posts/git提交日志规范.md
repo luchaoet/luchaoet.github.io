@@ -14,21 +14,23 @@ summary: git提交日志规范,让开发打消杀人的念头
 
 1. 所谓仓廪实而知礼节，随着大型共建项目 / 开源项目的增多，必然要用更专业化的态度去面对。规范化的 Git log 正是其中一环。
 2. 最后，如果实在无法完美遵循日志规范，最最重要的原则是：__至少要保证在整个项目中 log 格式的一致性__！不要做一个朝秦暮楚的人。
+
 ### type
 
 提交类型 type 用来描述一次提交行为的改动方向。
 
 type 的可选值如下。注意：Git log 的 type 和 changelog 的 type 存在紧密联系；然而它们两者之间并非一一对应，比如在 changelog 中一般不会指出文档 docs 或测试用例 test 等方面发生的变化。
 
-* feat: 新增功能。
-* fix: 修复 bug。
-* docs: 文档相关的改动。
-* style: 对代码的格式化改动，代码逻辑并未产生任何变化。
-* test: 新增或修改测试用例。
-* refactor: 重构代码或其他优化举措。
-* <span data-type="color" style="color:rgb(0, 0, 0)"><span data-type="background" style="background-color:rgb(255, 255, 255)">perf: 优化相关，比如提升性能、体验。</span></span>
-* chore: 项目工程方面的改动，<span data-type="color" style="color:rgb(0, 0, 0)"><span data-type="background" style="background-color:rgb(255, 255, 255)">改变构建流程、或者增加依赖库、工具等，</span></span>代码逻辑并未产生任何变化。
-* <span data-type="color" style="color:rgb(0, 0, 0)"><span data-type="background" style="background-color:rgb(255, 255, 255)">revert: 回滚到上一个版本。</span></span>
+* feat: 新增功能
+* fix: 修复 bug
+* docs: 文档相关的改动
+* style: 对代码的格式化改动，代码逻辑并未产生任何变化
+* test: 新增或修改测试用例
+* refactor: 重构代码或其他优化举措
+* perf: 优化相关，比如提升性能、体验
+* chore: 项目工程方面的改动，改变构建流程、或者增加依赖库、工具等，</span></span>代码逻辑并未产生任何变化。
+* revert: 回滚到上一个版本
+
 
 ### scope
 
@@ -53,7 +55,7 @@ docs: 删除冗余文档
 docs: 我删除了冗余文档
 ```
 
-## log body
+### log body
 
 日志的内容主体 body 用来描述详细的提交内容，可写可不写。
 
@@ -61,7 +63,7 @@ docs: 我删除了冗余文档
 2. 句式视情况而定，一般使用祈使句式。
 3. 标点方面遵循一般的文档格式规范。
 
-## log footer
+### log footer
 
 日志的内容页脚 footer 用来描述一些补充信息，可写可不写。
 
@@ -72,7 +74,7 @@ docs: 我删除了冗余文档
       Closes #35, #38, #49
     ```
 
-## Commitizen
+### Commitizen
 [Commitizen](https://github.com/commitizen/cz-cli)<span data-type="color" style="color:rgb(51, 51, 51)"><span data-type="background" style="background-color:rgb(255, 255, 255)">是一个撰写合格 Commit message 的工具</span></span>
 
 安装
@@ -90,4 +92,3 @@ commitizen init cz-conventional-changelog --save --save-exact
 
 
 ![粘贴图片.png | center | 650x461](https://cdn.nlark.com/yuque/0/2018/png/115449/1540362574576-35ec7d1a-cfe3-40e0-9df2-7e5d5f244f69.png "")
-

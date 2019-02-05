@@ -157,24 +157,67 @@ hasattr(list, 'append')
 
 ### hash()
 ### help()
+返回对象帮助文档
+
 ### hex()
 ### id()
+返回对象的内存地址
+
 ### input()
+获取用户输入的值
+
 ### int()
+将字符串或数值转为普通整数
+
 ### isinstance()
+判断对象是否为指定类型
+```python
+from collections import Iterable
+
+isinstance([1,2,3],Iterable) 
+# True
+```
+
 ### issubclass()
+检查一个类是否是另一个类的子类
+```python
+class Foo(object):
+    pass
+   
+class Bar(Foo):
+    pass
+   
+print issubclass(Bar, Foo) # True
+```
+
 ### iter()
-### len()
+返回一个iterator对象<br />### len()
+返回对象长度
+
 ### list()
+列表构造函数
+
 ### locals()
+返回包含当前所有局部变量的字典
+
 ### map()
 ### max()
+返回给定元素中最大值
+
 ### memoryview()
 ### min()
+返回给定元素中最小值
+
 ### next()
+返回一个可迭代数据结构（如列表）中的下一项<br /><br />
 ### object()
 ### open()
 ### pow()
+幂函数
+```python
+pow(2, 10) # 2的10次方
+```
+
 ### print()
 ### property()
 ### range()
@@ -194,6 +237,3 @@ hasattr(list, 'append')
 ### vars()
 ### zip()
 ### __import__()
-
-### 
-
