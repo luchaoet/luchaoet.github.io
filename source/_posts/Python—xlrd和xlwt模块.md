@@ -141,3 +141,29 @@ table.write(0,0,'test')
 # 保存 默认保存在当前目录
 file.save('/Users/lc/Desktop/demo.xls')
 ```
+
+#### 设置字体、颜色与单元格背景
+write_merge(x, x + m, y, y + n, string, style) 合并单元格 x表示行，y表示列，m表示跨行个数，n表示跨列个数，string表示要写入的单元格内容，style表示单元格样式
+```python
+for i in range(0x00,0xff):
+  	# 初始化样式
+    style = xlwt.XFStyle()   
+    
+    font = xlwt.Font()   # 创建一个文本格式，包括字体、字号和颜色样式特性    
+    font.name = u'微软雅黑'  # 设置其字体为微软雅黑     
+    font.colour_index = i+1  # 设置其字体颜色     
+    font.bold = True  
+    font.height = 400 
+    style.font = font 
+
+    pattern = xlwt.Pattern()   # 创建一个模式     
+    pattern.pattern = xlwt.Pattern.SOLID_PATTERN  
+		# 设置单元格背景
+    pattern.pattern_fore_colour = i
+    # 设置单元格背景颜色 0 = Black, 1 = White, 2 = Red, 3 = Green, 4 = Blue, 5 = Yellow, 6 = Magenta, the list goes on...
+    style.pattern = pattern
+
+    table.write_merge(i, i, 0, 1, str(i+1)+'-lucy', style)
+```
+
+![屏幕快照 2019-02-15 15.42.11.png](https://cdn.nlark.com/yuque/0/2019/png/115449/1550216575067-e194aa06-0d7d-4265-a008-0629f9737122.png#align=left&display=inline&height=719&linkTarget=_blank&name=%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-02-15%2015.42.11.png&originHeight=719&originWidth=227&size=66462&width=227)
