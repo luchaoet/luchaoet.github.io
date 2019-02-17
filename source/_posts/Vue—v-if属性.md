@@ -87,16 +87,85 @@ function processIf (el) {
 
 该函数的作用是<br />如果节点包含`v-if`属性
 ```javascript
-el.if = exp;
-addIfCondition(el, {
-  exp: exp,
-  block: el
-});
+var exp = getAndRemoveAttr(el, 'v-if'); // value === 1
+if (exp) {
+  console.log(el)
+  el.if = exp;
+  addIfCondition(el, {
+    exp: exp,
+    block: el
+  });
+}
 ```
-1.在AST中添加一个`if`属性<br />![20190215174004.png](https://cdn.nlark.com/yuque/0/2019/png/115449/1550223668598-cbcf3c45-803c-408f-9691-5e073498734c.png#align=left&display=inline&height=215&linkTarget=_blank&name=20190215174004.png&originHeight=215&originWidth=446&size=30530&width=446)<br />2.在AST中添加一个`ifConditions`属性
+在AST中添加一个`if`属性<br />![20190215174004.png](https://cdn.nlark.com/yuque/0/2019/png/115449/1550223668598-cbcf3c45-803c-408f-9691-5e073498734c.png#align=left&display=inline&height=215&linkTarget=_blank&name=20190215174004.png&originHeight=215&originWidth=446&size=30530&width=446)<br />addIfCondition函数会在AST中该el添加一个`ifConditions`属性来保存当前v-if相关元素
 
+如果节点包含`v-else-if`属性，则在AST中添加一个`elseif`属性
+```javascript
+var elseif = getAndRemoveAttr(el, 'v-else-if');
+if (elseif) {
+	el.elseif = elseif;
+}
+```
+![20190215174027.png](https://cdn.nlark.com/yuque/0/2019/png/115449/1550224120956-ef022d92-8287-489e-9f55-8d50526d9498.png#align=left&display=inline&height=178&linkTarget=_blank&name=20190215174027.png&originHeight=178&originWidth=456&size=25783&width=456)
 
-
-如果节点包含`v-else-if`属性，则在AST中添加一个`elseif`属性<br />![20190215174027.png](https://cdn.nlark.com/yuque/0/2019/png/115449/1550224120956-ef022d92-8287-489e-9f55-8d50526d9498.png#align=left&display=inline&height=178&linkTarget=_blank&name=20190215174027.png&originHeight=178&originWidth=456&size=25783&width=456)
+接着走如下判断
+```javascript
+if (currentParent && !element.forbidden) {
+  if (element.elseif || element.else) {
+  	processIfConditions(element, currentParent);
+  } else {
+    if (element.slotScope) {
+      // scoped slot
+      // keep it in the children list so that v-else(-if) conditions can
+      // find it as the prev node.
+      var name = element.slotTarget || '"default"'
+      ;(currentParent.scopedSlots || (currentParent.scopedSlots = {}))[name] = element;
+    }
+    currentParent.children.push(element);
+    element.parent = currentParent;
+  }
+}
+```
+从其中的判断可知，父节点的`children`中会有`v-if`的标签
 
 如果节点包含`v-else`属性，则在AST中添加一个`else: true`属性<br />![20190215174050.png](https://cdn.nlark.com/yuque/0/2019/png/115449/1550224168597-b045e85f-2687-43c6-9eac-4dea90438325.png#align=left&display=inline&height=179&linkTarget=_blank&name=20190215174050.png&originHeight=179&originWidth=473&size=24673&width=473)
+
+接着也是同上操作
+
+看下`processIfConditions`函数
+```javascript
+function processIfConditions (el, parent) {
+  var prev = findPrevElement(parent.children);
+  if (prev && prev.if) {
+    addIfCondition(prev, {
+      exp: el.elseif,
+      block: el
+    });
+  } else {
+    warn$2(
+      "v-" + (el.elseif ? ('else-if="' + el.elseif + '"') : 'else') + " " +
+      "used on element <" + (el.tag) + "> without corresponding v-if.",
+      el.rawAttrsMap[el.elseif ? 'v-else-if' : 'v-else']
+      );
+	}
+}
+
+function findPrevElement (children) {
+  var i = children.length;
+  while (i--) {
+    if (children[i].type === 1) {
+    	return children[i]
+    } else {
+      if (children[i].text !== ' ') {
+        warn$2(
+        "text \"" + (children[i].text.trim()) + "\" between v-if and v-else(-if) " +
+        "will be ignored.",
+        children[i]
+        );
+      }
+    	children.pop();
+    }
+  }
+}
+```
+`findPrevElement`函数会先拿到el元素的前一个兄弟节点，然后从后往前寻找第一个节点，如果中间存在文本节点，会被删除并报错<br />如果`prev`元素存在且`prev.if`存在，则把当前节点和条件添加到`pre`的`ifConditions`中
