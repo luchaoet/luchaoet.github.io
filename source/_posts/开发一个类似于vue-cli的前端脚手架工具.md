@@ -9,7 +9,6 @@ summary:
 npm install --global vue-cli
 ```
 当我们全局安装`vue-cli`后，我们便可以使用`vue`命令安装我们的vue项目的模板，它通过询问式的流程，引导开发者安装自己需要的模板<br />![20190225103705.png](https://cdn.nlark.com/yuque/0/2019/png/115449/1551062392228-7be8bc92-58e6-4c74-ad72-aec1314420b6.png#align=left&display=inline&height=462&linkTarget=_blank&name=20190225103705.png&originHeight=800&originWidth=1292&size=688987&status=done&width=746)<br />这一切是怎么做到的？
-
 <a name="a04f5e4b"></a>
 ### node命令行工具
 <a name="package.json"></a>
