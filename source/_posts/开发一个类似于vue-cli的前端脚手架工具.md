@@ -207,4 +207,4 @@ program.parse(process.argv);
 
 <a name="32f91adf"></a>
 ### 发布至npm
-关于如何发布npm包，我请查看我的下一篇文章
+关于如何发布npm包，请查看我的下一篇文章
