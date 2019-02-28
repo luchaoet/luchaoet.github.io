@@ -1,8 +1,8 @@
 ---
-title: node-assert断言
+title: node-assert
 date: 2019-02-27 16:15:57
 tags: ['node', 'assert']
-summary:
+summary: 断言
 ---
 `assert` 模块提供了一组简单的断言测试，可用于测试不变量<br />存在严格模式（`strict`）和遗留模式（`legacy`），但建议仅使用严格模式
 
