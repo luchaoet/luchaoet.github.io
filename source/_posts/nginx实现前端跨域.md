@@ -4,6 +4,7 @@ date: 2018-11-11 16:09:45
 tags: ['nginx', '前端跨域']
 summary:
 ---
+讨论环境：Mac
 <a name="19e98bc8"></a>
 ### 1.Homebrew安装
 终端执行
@@ -13,7 +14,7 @@ summary:
 
 <a name="ce5107cb"></a>
 ### [](https://www.yuque.com/luchao/blog/pfym4o#rle4uz)2.下载nginx
-window：[http://nginx.org/en/download.html](http://nginx.org/en/download.html)<br />mac 安装
+mac 安装
 ```
 brew install nginx
 ```
@@ -35,6 +36,7 @@ brew services stop nginx
 ```
 brew cask install launchrocket
 ```
+launchrocket界面<br />![WX20190301-161713@2x.png](https://cdn.nlark.com/yuque/0/2019/png/115449/1551428264116-52ada475-7def-4e02-9d80-0a44f0e29919.png#align=left&display=inline&height=453&name=WX20190301-161713%402x.png&originHeight=812&originWidth=1336&size=130054&status=done&width=746)<br />
 
 nginx文件路径`/usr/local/etc/nginx`<br />可以使用 `open /usr/...` 打开文件夹
 
