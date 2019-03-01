@@ -1,16 +1,16 @@
 ---
 title: nginx前端实现跨域
 date: 2018-11-11 17:37:09
-tags: ['nginx', '跨域']
+tags: ['nginx', '前端跨域']
 summary:
 ---
-### 1.下载nginx
+### 1.Homebrew安装
+<span data-type="color" style="color:rgb(0, 0, 0)"><span data-type="background" style="background-color:rgb(246, 248, 250)">/usr/bin/ruby </span></span><span data-type="color" style="color:rgb(0, 0, 0)">-e</span><span data-type="color" style="color:rgb(0, 0, 0)"><span data-type="background" style="background-color:rgb(246, 248, 250)"> </span></span><span data-type="color" style="color:rgb(0, 153, 0)">&quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"
+
+### 2.下载nginx
 // http://nginx.org/en/download.html
 
 mac 安装： <span data-type="color" style="color:rgb(0, 0, 0)"><span data-type="background" style="background-color:rgb(246, 248, 250)">brew install nginx</span></span>
-
-### 2.Homebrew安装
-<span data-type="color" style="color:rgb(0, 0, 0)"><span data-type="background" style="background-color:rgb(246, 248, 250)">/usr/bin/ruby </span></span><span data-type="color" style="color:rgb(0, 0, 0)">-e</span><span data-type="color" style="color:rgb(0, 0, 0)"><span data-type="background" style="background-color:rgb(246, 248, 250)"> </span></span><span data-type="color" style="color:rgb(0, 153, 0)">&quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"
 
 ### 3.launchrocket安装
 帮助管理Homebrew安装的服务软件
