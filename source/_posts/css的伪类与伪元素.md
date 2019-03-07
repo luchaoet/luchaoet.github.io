@@ -4,4 +4,21 @@ date: 2018-10-19 17:49:05
 tags: css
 summary: 总结css伪类与伪元素
 ---
-![屏幕快照 2018-10-19 下午5.52.10.png | center | 747x647](https://cdn.nlark.com/yuque/0/2018/png/115449/1539942944689-ac38b246-0b9a-464f-bedc-08926f8f491d.png "")
+| 伪类 | 伪类通过冒号来定义，它定义了元素的状态，如点击按下，点击完成等，通过伪类可以为元素的状态修改样式 | :link |  |  |
+| :---: | --- | --- | --- | --- |
+|  |  | :visited |  |  |
+|  |  | :hover |  |  |
+|  |  | :active |  |  |
+|  |  | :focus |  |  |
+|  |  | :not(S) |  |  |
+|  |  | :first-child |  |  |
+|  |  | :last-child |  |  |
+|  |  | :only-child |  |  |
+|  |  | :empty |  |  |
+|  |  | :checked |  |  |
+|  |  | :nth-child(n) |  |  |
+| 伪元素<br /> |  | :first-letter | 向文本的第一个字母添加特殊样式 | css1 |
+|  |  | :first-line | 向文本的首行添加特殊样式 | css1 |
+|  |  | :after | 在元素之后添加内容 | css2 |
+|  |  | :before | 在元素之前添加内容 | css2 |
+|  |  | ::selection<br />(仅支持双冒号) | 改变用户所选取部分的样式 | css3 |
