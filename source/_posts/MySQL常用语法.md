@@ -1,7 +1,7 @@
 ---
-title: MySQL语法学习
+title: MySQL常用语法
 date: 2019-03-04 11:08:51
-tags: ['MySQL']
+tags: MySQL
 summary: MySQL常用语法
 ---
 ```sql
