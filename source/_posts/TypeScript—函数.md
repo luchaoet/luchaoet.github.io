@@ -91,3 +91,9 @@ overloadingFn('a', 'b');
 
 <a name="d86f8699"></a>
 ### 箭头函数
+箭头函数和es6中一样
+```typescript
+setTimeout(() => {
+    console.log('箭头函数')
+}, 1000);
+```
