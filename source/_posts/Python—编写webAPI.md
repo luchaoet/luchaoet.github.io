@@ -67,4 +67,4 @@ if __name__ == '__main__':
 ```
 ### 
 ### 返回的结果
-![屏幕快照 2019-02-19 11.41.52.png](https://cdn.nlark.com/yuque/0/2019/png/115449/1550547746261-24a32246-1e59-4668-bf54-88f371ccad1e.png#align=left&display=inline&height=332&linkTarget=_blank&name=%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-02-19%2011.41.52.png&originHeight=332&originWidth=452&size=39692&width=452)<br />我们便用python打通了前端，后端和数据库这一条链路<br />这就是简单的web AP编写过程
+![屏幕快照 2019-02-19 11.41.52.png](https://cdn.nlark.com/yuque/0/2019/png/115449/1550547746261-24a32246-1e59-4668-bf54-88f371ccad1e.png#align=left&display=inline&height=332&linkTarget=_blank&name=%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-02-19%2011.41.52.png&originHeight=332&originWidth=452&size=39692&width=452)<br />我们便用python打通了前端，后端和数据库这一条链路<br />这就是简单的web API编写过程
