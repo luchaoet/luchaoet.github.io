@@ -1,7 +1,7 @@
 ---
 title: TypeScript—类型推论
 date: 2019-03-17 11:15:20
-tags:
+tags: ['TypeScript', 'TS', '类型推论']
 summary:
 ---
 如果没有明确的指定类型，那么 TypeScript 会依照类型推论（Type Inference）的规则推断出一个类型
