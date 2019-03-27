@@ -9,14 +9,15 @@ summary: 总结css伪类与伪元素
 |  |  | :visited |  |  |
 |  |  | :hover |  |  |
 |  |  | :active |  |  |
-|  |  | :focus |  |  |
-|  |  | :not(S) |  |  |
-|  |  | :first-child |  |  |
-|  |  | :last-child |  |  |
-|  |  | :only-child |  |  |
-|  |  | :empty |  |  |
-|  |  | :checked |  |  |
-|  |  | :nth-child(n) |  |  |
+|  |  | :focus | 匹配聚焦的元素 |  |
+|  |  | :not(S) | 否定伪类，参数可多个 |  |
+|  |  | :first-child | 匹配自己是父元素的第一个子元素的元素 |  |
+|  |  | :last-child | 匹配自己是父元素的最后一个子元素的元素 |  |
+|  |  | :only-child | 匹配自己是父元素的唯一子元素的元素 |  |
+|  |  | :empty | 选择没有任何子级的元素 | css3 |
+|  |  | :checked | 匹配每个选中的输入元素（仅适用于单选按钮或复选框） |  |
+|  |  | :nth-child(n) | 第n个子元素 |  |
+|  |  | :has() | 选择满足参数选择器特性的元素 |  |
 | 伪元素<br /> |  | :first-letter | 向文本的第一个字母添加特殊样式 | css1 |
 |  |  | :first-line | 向文本的首行添加特殊样式 | css1 |
 |  |  | :after | 在元素之后添加内容 | css2 |
