@@ -1,5 +1,5 @@
 ---
-title: querySelector
+title: querySelector, querySelectorAll, matchesSelector
 date: 2019-03-27 14:57:01
 tags: ['querySelector', 'querySelectorAll', 'matchesSelector']
 summary: querySelector(), querySelectorAll(), matchesSelector()
