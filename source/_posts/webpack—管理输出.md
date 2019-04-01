@@ -20,7 +20,8 @@ module.exports = {
   }
 }
 ```
-执行`npm run build`，生成如下<br />![屏幕快照 2019-03-31 下午7.04.33.png](https://cdn.nlark.com/yuque/0/2019/png/115449/1554030334072-e3e53501-ef22-4631-aed6-bb833991cd84.png#align=left&display=inline&height=120&name=%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-03-31%20%E4%B8%8B%E5%8D%887.04.33.png&originHeight=208&originWidth=1292&size=380442&status=done&width=746)<br />我们可以看到，webpack 生成 `print.bundle.js` 和 `app.bundle.js` 文件<br /><br /><br />但是，如果更改了我们的一个入口起点的名称，甚至添加了一个新的入口，这是需要修改`index.html`文件引用新的文件。让我们用 `HtmlWebpackPlugin` 来解决这个问题
+执行`npm run build`，生成如下<br />![屏幕快照 2019-03-31 下午7.04.33.png](https://cdn.nlark.com/yuque/0/2019/png/115449/1554030334072-e3e53501-ef22-4631-aed6-bb833991cd84.png#align=left&display=inline&height=120&name=%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-03-31%20%E4%B8%8B%E5%8D%887.04.33.png&originHeight=208&originWidth=1292&size=380442&status=done&width=746)<br />我们可以看到，webpack 生成 `print.bundle.js` 和 `app.bundle.js` 文件
+<br />但是，如果更改了我们的一个入口起点的名称，甚至添加了一个新的入口，这是需要修改`index.html`文件引用新的文件。让我们用 `HtmlWebpackPlugin` 来解决这个问题
 <a name="b785ac30"></a>
 ### 设置 HtmlWebpackPlugin
 安装`html-webpack-plugin`
