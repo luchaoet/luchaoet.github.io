@@ -86,3 +86,5 @@ module.exports = merge(common, {
 });
 ```
 避免在生产中使用 _`inline-***`_ 和 _`eval-***`_，因为它们会增加 bundle 体积大小，并降低整体性能
+
+该文源码点击[查看](https://github.com/Lucy20209060/webpack-test/tree/master/demo-06)
