@@ -1,0 +1,298 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Lucy"><title>MySQL数据类型 · 长剑腥腥挂壁</title><meta name="description" content="MySQL中的3中基本列数据类型：数字、日期和时间、字符串这三种类型需要不同的存储空间，基本原则是选择可以满足数据的最小类型
+数字类型数字类型可以分为整型和浮点型
+整数
+
+
+类型
+取值范围
+存储空间(字节)
+描述
+
+
+
+
+TINYINT[(M)]
+(-127, 128)或(0, 255)
+1
+非常小"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/logo-2.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo-2.png" style="width:127px;"><h3 title><a href="/">长剑腥腥挂壁</a></h3></div></div><ul class="social-links"></ul></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/logo-2.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>MySQL数据类型</a></h3></div><div class="post-content"><p>MySQL中的3中基本列数据类型：<code>数字</code>、<code>日期和时间</code>、<code>字符串</code><br>这三种类型需要不同的存储空间，基本原则是选择可以满足数据的最小类型<br><a name="1460fc73"></a></p>
+<h3 id="数字类型"><a href="#数字类型" class="headerlink" title="数字类型"></a>数字类型</h3><p>数字类型可以分为<code>整型</code>和<code>浮点型</code><br><a name="b5f1a7cd"></a></p>
+<h4 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">取值范围</th>
+<th style="text-align:left">存储空间(字节)</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TINYINT[(M)]</td>
+<td style="text-align:left">(-127, 128)或(0, 255)</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">非常小的整数</td>
+</tr>
+<tr>
+<td style="text-align:left">BIT</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">TINYINT的同义词</td>
+</tr>
+<tr>
+<td style="text-align:left">BOOL</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">TINYINT的同义词</td>
+</tr>
+<tr>
+<td style="text-align:left">SMALLINT[(M)]</td>
+<td style="text-align:left">(-32768, 32767)或(0, 65535)</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">小型整数</td>
+</tr>
+<tr>
+<td style="text-align:left">MEDIUMINT[(M)]</td>
+<td style="text-align:left">(-8388608, 8388607)或(0, 16777215)</td>
+<td style="text-align:left">3</td>
+<td style="text-align:left">中型整数</td>
+</tr>
+<tr>
+<td style="text-align:left">INT[(M)]</td>
+<td style="text-align:left">(-2, 2-1)或(0, 2-1)</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">一般整数</td>
+</tr>
+<tr>
+<td style="text-align:left">INTEGER[(M)]</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">INT的同义词</td>
+</tr>
+<tr>
+<td style="text-align:left">BIGINT[(M)]</td>
+<td style="text-align:left">(-2, 2-1)或(0, 2-1)</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">大型整数</td>
+</tr>
+</tbody>
+</table>
+<p><a name="cad4fe7d"></a></p>
+<h4 id="浮点"><a href="#浮点" class="headerlink" title="浮点"></a>浮点</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">取值范围</th>
+<th style="text-align:left">存储空间(字节)</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">FLOAT(精度)</td>
+<td style="text-align:left">取决于精度</td>
+<td style="text-align:left">可变</td>
+<td style="text-align:left">可用于指定单精度和双精度浮点型</td>
+</tr>
+<tr>
+<td style="text-align:left">FLOAT[(M, D)]</td>
+<td style="text-align:left">±1.175494351E-38</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">单精度浮点数，等同于FLOAT(4),但是指定显示宽度和小数位数</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">±3.402823466E+38</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">DOUBLE[(M, D)]</td>
+<td style="text-align:left">±1.7976931348623157E+308</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">双精度浮点数，等同于FLOAT(8),但是指定显示宽度和小数位数</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">±2.2250738585072014E-308</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">DOUBLE</td>
+<td style="text-align:left">同上</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">DOUBLE[(M, D)]的同义词</td>
+</tr>
+<tr>
+<td style="text-align:left">PRECISION[(M, D)]</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">REAL[(M, D)]</td>
+<td style="text-align:left">同上</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">DOUBLE[(M, D)]的同义词</td>
+</tr>
+<tr>
+<td style="text-align:left">DECIMAL[(M[, D])]</td>
+<td style="text-align:left">可变</td>
+<td style="text-align:left">M+2</td>
+<td style="text-align:left">浮点数，以char存储，范围取决于显示宽度</td>
+</tr>
+<tr>
+<td style="text-align:left">NUMERIC[(M, D)]</td>
+<td style="text-align:left">同上</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">DECIMAL的同义词</td>
+</tr>
+<tr>
+<td style="text-align:left">DEC[(M, D)]</td>
+<td style="text-align:left">同上</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">DECIMAL的同义词</td>
+</tr>
+<tr>
+<td style="text-align:left">FIXED[(M, D)]</td>
+<td style="text-align:left">同上</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">DECIMAL的同义词</td>
+</tr>
+</tbody>
+</table>
+<p><a name="f374bbab"></a></p>
+<h3 id="日期和时间类型"><a href="#日期和时间类型" class="headerlink" title="日期和时间类型"></a>日期和时间类型</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>取值范围</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DATE</td>
+<td>(1000-01-01, 9999-12-31)</td>
+<td>日期，YYYY-MM-DD格式</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>(-838:59:59, 838:59:59)</td>
+<td>时间，HH:MM:SS格式</td>
+</tr>
+<tr>
+<td>DATETIME</td>
+<td>(1000-01-01 00:00:00, 9999-12-31 23:59:59)</td>
+<td>日期和时间，YYYY-MM-DD HH:MM:SS格式</td>
+</tr>
+<tr>
+<td>TIMESTAMP[(A)]</td>
+<td>1970-01-01 00:00:00</td>
+<td>时间标签</td>
+</tr>
+<tr>
+<td>YEAR[(2/4)]</td>
+<td>70-69(1970-2069)<br>1901-2155</td>
+<td>年份，指定2/4位数字的格式，表示的范围也不一样，如左所示</td>
+</tr>
+</tbody>
+</table>
+<p><a name="fd42ea8d"></a></p>
+<h3 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h3><p>字符串分为3类<br><code>普通字符串</code>，即小段文本。包括CHAR(固定长度)和VARCHAR(可变长度字符)，可以指定每种类型的宽度<br><code>TEXT和BLOB类型</code>。大小可变，分别是适用于长文本或二进制数据。BLOB全称大二进制对象(binary large objects)，支持任何数据，如图像或声音数据<br><code>SET和ENUM</code>。SET类型用来指定列中的值必须来自一个特定集合中的指定值。列值可以包含来自该集合的多个值。在指定的集合中最大可以有64个元素。ENUM就是枚举，于SET类型非常相似，但是该类型的列可以只有一个指定集合中的值或者NULL，在枚举中最大还可以有65535个元素<br><a name="62a822d1"></a></p>
+<h4 id="常规字符串类型"><a href="#常规字符串类型" class="headerlink" title="常规字符串类型"></a>常规字符串类型</h4><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>取值范围(字节)</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHAR</td>
+<td>0-255</td>
+<td>定长字符串</td>
+</tr>
+<tr>
+<td>VARCHAR</td>
+<td>0-65535</td>
+<td>变长字符串</td>
+</tr>
+</tbody>
+</table>
+<p><a name="763fb402"></a></p>
+<h4 id="TEXT和BLOB类型"><a href="#TEXT和BLOB类型" class="headerlink" title="TEXT和BLOB类型"></a>TEXT和BLOB类型</h4><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>最大长度(字符数)</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TINYBLOB</td>
+<td>255</td>
+<td>小二进制大对象字段</td>
+</tr>
+<tr>
+<td>TINYTEXT</td>
+<td>255</td>
+<td>小TEXT字段</td>
+</tr>
+<tr>
+<td>BLOB</td>
+<td>65535</td>
+<td>常规大小BLOB字段</td>
+</tr>
+<tr>
+<td>TEXT</td>
+<td>65535</td>
+<td>常规大小TEXT字段</td>
+</tr>
+<tr>
+<td>MEDIUMBLOB</td>
+<td>16777215</td>
+<td>中型大小BLOB字段</td>
+</tr>
+<tr>
+<td>MEDIUMTEXT</td>
+<td>16777215</td>
+<td>中型大小TEXT字段</td>
+</tr>
+<tr>
+<td>LONGBLOB</td>
+<td>4294967295</td>
+<td>长BLOB字段</td>
+</tr>
+<tr>
+<td>LONGTEXT</td>
+<td>4294967295</td>
+<td>长TEXT字段</td>
+</tr>
+</tbody>
+</table>
+<p><a name="6066ac12"></a></p>
+<h4 id="SET和ENUM类型"><a href="#SET和ENUM类型" class="headerlink" title="SET和ENUM类型"></a>SET和ENUM类型</h4><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>集合中的最大值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ENUM(value1, value2, …)</td>
+<td>65535</td>
+<td></td>
+</tr>
+<tr>
+<td>SET(value1, value2, …)</td>
+<td>64</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-03-07</span><i class="fa fa-tag"></i><a class="tag" href="/tags/MySQL/" title="MySQL">MySQL </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2019/03/08/express框架实现热更新/" title="express框架实现热更新">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2019/03/06/express设置允许跨域/" title="express设置允许跨域">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>

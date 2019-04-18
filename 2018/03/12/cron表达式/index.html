@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Lucy"><title>cron表达式 · 长剑腥腥挂壁</title><meta name="description" content="1. 组成cron表达式实际上是由七个子表达式组成。这些表达式之间用空格分隔。
+
+Seconds （秒）0~59
+Minutes（分）0~59
+Hours（小时）0～23
+Day  （天）1～31
+Month（月）1~12，或者&amp;quot;JAN, FEB, MAR, APR, MAY, JUN, "><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/logo-2.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo-2.png" style="width:127px;"><h3 title><a href="/">长剑腥腥挂壁</a></h3></div></div><ul class="social-links"></ul></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/logo-2.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>cron表达式</a></h3></div><div class="post-content"><h3 id="1-组成"><a href="#1-组成" class="headerlink" title="1. 组成"></a>1. 组成</h3><p>cron表达式实际上是由七个子表达式组成。这些表达式之间用空格分隔。</p>
+<ol>
+<li>Seconds （秒）0~59</li>
+<li>Minutes（分）0~59</li>
+<li>Hours（小时）0～23</li>
+<li>Day  （天）1～31</li>
+<li>Month（月）1~12，或者&quot;JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV,DEC&quot;</li>
+<li>Week （周） 1~7,1=SUN 或者&quot;SUN, MON, TUE, WED, THU, FRI, SAT”</li>
+<li>Year（年） 1970~2099</li>
+</ol>
+<h3 id="2-值"><a href="#2-值" class="headerlink" title="2. 值"></a>2. 值</h3><p><span data-type="color" style="color:rgb(0, 0, 0)">Cron表达式的格式：秒 分 时 日 月 周 年(可选)</span></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字段名</th>
+<th style="text-align:center">允许值</th>
+<th style="text-align:center">允许的特殊字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">秒</td>
+<td style="text-align:center">0～59</td>
+<td style="text-align:center">, - * ／</td>
+</tr>
+<tr>
+<td style="text-align:center">分</td>
+<td style="text-align:center">0～59</td>
+<td style="text-align:center">, - * ／</td>
+</tr>
+<tr>
+<td style="text-align:center">时</td>
+<td style="text-align:center">0～23</td>
+<td style="text-align:center">, - * ／</td>
+</tr>
+<tr>
+<td style="text-align:center">日</td>
+<td style="text-align:center">1～31</td>
+<td style="text-align:center">, - * ?／L W C</td>
+</tr>
+<tr>
+<td style="text-align:center">月</td>
+<td style="text-align:center">1～12／JAN-DEC</td>
+<td style="text-align:center">, - * ／</td>
+</tr>
+<tr>
+<td style="text-align:center">周</td>
+<td style="text-align:center">1-7／SUN-SAT</td>
+<td style="text-align:center">, - * ? / L C #</td>
+</tr>
+<tr>
+<td style="text-align:center">年</td>
+<td style="text-align:center">1970~2099／空</td>
+<td style="text-align:center">, - * /</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-字符含义"><a href="#3-字符含义" class="headerlink" title="3.字符含义"></a>3.字符含义</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">含义</th>
+<th style="text-align:left">举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">,</td>
+<td style="text-align:center">枚举值</td>
+<td style="text-align:left">在Minutes子表达式中，“5,20”表示在5分钟和20分钟触发</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">指定范围</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">代表所有可能的值</td>
+<td style="text-align:left">在Month中表示每个月，在Day中表示每天，在Hours表示每小时</td>
+</tr>
+<tr>
+<td style="text-align:center">/</td>
+<td style="text-align:center">指定增量</td>
+<td style="text-align:left">在Minutes子表达式中，“0/15”表示从0分钟开始，每15分钟执行一次。”3/20”表示从第三分钟开始，每20分钟执行一次。和”3,23,43”（表示第3，23，43分钟触发）的含义一样</td>
+</tr>
+<tr>
+<td style="text-align:center">?</td>
+<td style="text-align:center">用在Day和Week中，指“没有具体的值”。当两个子表达式其中一个被指定了值以后，为了避免冲突，需要将另外一个的值设为“?”</td>
+<td style="text-align:left">每月20日触发调度，不管20号是星期几，只能用如下写法：0 0 0 20 <em> ?，其中最后以为只能用“?”，而不能用“</em>”</td>
+</tr>
+<tr>
+<td style="text-align:center">L</td>
+<td style="text-align:center">用在Day和Week中，表示last</td>
+<td style="text-align:left">月的最后一天／周的最后一天</td>
+</tr>
+<tr>
+<td style="text-align:center">W</td>
+<td style="text-align:center">“Weekday”的缩写。只能用在day-of-month字段。用来描叙最接近指定天的工作日（周一到周五）</td>
+<td style="text-align:left">在Day字段用“15W”指“最接近这个月第15天的某个工作日”，即如果这个月第15天是周六，那么触发器将会在这个月第14天即周五触发；如果这个月第15天是周日，那么触发器将会在这个月第 16天即周一触发；如果这个月第15天是周二，那么就在触发器这天触发。注意一点：这个用法只会在当前月计算值，不会越过当前月。“W”字符仅能在Day指明一天，不能是一个范围或列表。也可以用“LW”来指定这个月的最后一个工作日，即最后一个星期五。</td>
+</tr>
+<tr>
+<td style="text-align:center">#</td>
+<td style="text-align:center">只能用在Week字段。用来指定这个月的第几个周几</td>
+<td style="text-align:left">在Week字段用”6#3” or “FRI#3”指这个月第3个周五（6指周五，3指第3个）。如果指定的日期不存在，触发器就不会触发</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-表达式例子"><a href="#4-表达式例子" class="headerlink" title="4.表达式例子"></a>4.表达式例子</h3><p><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 * * * * ?</code> 每1分钟触发一次</span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 0 * * * ?</code> 每1小时触发一次</span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 0 10 * * ?</code> 每天10点触发一次</span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 * 14 * * ?</code> 在每天下午2点到下午2:59期间的每1分钟触发</span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 30 9 1 * ?</code> 每月1号上午9点半</span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 15 10 15 * ?</code> 每月15日上午10:15触发</span></p>
+<p><span data-type="color" style="color:rgb(0, 0, 0)"><code>*/5 * * * * ?</code> 每隔5秒执行一次</span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 */1 * * * ?</code> 每隔1分钟执行一次</span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 0 5-15 * * ?</code> 每天5-15点整点触发</span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 0/3 * * * ?</code> 每三分钟触发一次</span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 0-5 14 * * ?</code> 在每天下午2点到下午2:05期间的每1分钟触发 </span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 0/5 14 * * ?</code> 在每天下午2点到下午2:55期间的每5分钟触发</span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 0/5 14,18 * * ?</code> 在每天下午2点到2:55期间和下午6点到6:55期间的每5分钟触发</span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 0/30 9-17 * * ?</code> 朝九晚五工作时间内每半小时</span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 0 10,14,16 * * ?</code> 每天上午10点，下午2点，4点 </span></p>
+<p><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 0 12 ? * WED</code> 表示每个星期三中午12点</span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 0 17 ? * TUES,THUR,SAT</code> 每周二、四、六下午五点</span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 10,44 14 ? 3 WED</code> 每年三月的星期三的下午2:10和2:44触发 </span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 15 10 ? * MON-FRI</code> 周一至周五的上午10:15触发</span></p>
+<p><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 0 23 L * ?</code> 每月最后一天23点执行一次</span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 15 10 L * ?</code> 每月最后一日的上午10:15触发 </span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 15 10 ? * 6L</code> 每月的最后一个星期五上午10:15触发 </span></p>
+<p><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 15 10 * * ? 2005</code> 2005年的每天上午10:15触发 </span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 15 10 ? * 6L 2002-2005</code> 2002年至2005年的每月的最后一个星期五上午10:15触发 </span><br><span data-type="color" style="color:rgb(0, 0, 0)"><code>0 15 10 ? * 6#3</code> 每月的第三个星期五上午10:15触发</span></p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2018-03-12</span><i class="fa fa-tag"></i><a class="tag" href="/tags/cron/" title="cron">cron </a></div></div></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2018/09/25/mac相关软件/" title="mac相关软件">上一篇</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2018/03/10/will-change/" title="will-change">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
